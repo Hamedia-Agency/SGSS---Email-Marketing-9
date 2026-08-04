@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
-import { Shield, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 interface NavbarProps {
   onOpenConsultation?: () => void;
@@ -18,13 +18,9 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
         <Link href="/" className={styles.navLogo} id="nav-logo">
           <img
             src="https://assets.cdn.filesafe.space/ApWkZ2IFXdvkS2AT3Tqg/media/691d0ba7c2cf864910f19e13.png"
-            alt="SGSS Logo"
+            alt="Secure Guard Security Services Logo"
             className={styles.logoImg}
           />
-          <div className={styles.navBrandContainer}>
-            <span className={styles.brandTitle}>Secure Guard</span>
-            <span className={styles.brandSubtitle}>SecureTrack Technology</span>
-          </div>
         </Link>
 
         {/* Desktop Nav Links */}
@@ -55,7 +51,6 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
               className={styles.navCta}
               id="nav-cta"
             >
-              <Shield className="w-4 h-4 inline mr-1.5" />
               Schedule Free Consultation
             </button>
           </li>
@@ -116,3 +111,5 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
     </nav>
   );
 }
+
+export default Navbar;

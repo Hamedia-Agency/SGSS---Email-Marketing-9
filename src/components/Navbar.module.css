@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 90px;
+  height: 110px;
 }
 
 .navLogo {
@@ -28,44 +28,23 @@
 .logoImg {
   border-radius: 8px;
   object-fit: contain;
-  height: 60px;
+  height: 80px;
   width: auto;
-}
-
-.navBrandContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-.brandTitle {
-  font-size: 20px;
-  font-weight: 900;
-  color: var(--color-dark-blue);
-  line-height: 1.1;
-  letter-spacing: -0.5px;
-}
-
-.brandSubtitle {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-gray);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   list-style: none;
 }
 
 .navLink {
   text-decoration: none;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-dark);
-  padding: 8px 16px;
+  padding: 8px 14px;
   border-radius: var(--radius-sm);
   transition: color var(--transition), background var(--transition);
 }
@@ -78,6 +57,7 @@
 .navCta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   text-decoration: none;
   font-size: 14px;

@@ -80,13 +80,13 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(254, 207, 49, 0.15);
+  background: rgba(254, 207, 49, 0.14);
   border: 1px solid rgba(254, 207, 49, 0.4);
   color: var(--color-gold);
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 12px;
+  font-weight: 700;
   letter-spacing: 0.8px;
-  padding: 8px 18px;
+  padding: 6px 14px;
   border-radius: 100px;
   margin-bottom: 24px;
   text-transform: uppercase;
@@ -112,7 +112,7 @@
 }
 
 .heroTitle {
-  font-size: clamp(2.3rem, 5.5vw, 3.8rem);
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
   font-weight: 900;
   color: var(--color-white);
   line-height: 1.15;
@@ -122,15 +122,15 @@
 
 .heroTitleAccent {
   color: var(--color-gold);
-  display: inline-block;
+  font-size: calc(1em - 2px);
 }
 
 .heroSubtitle {
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
-  color: rgba(255, 255, 255, 0.88);
-  max-width: 720px;
+  font-size: clamp(0.97rem, 1.8vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 680px;
   margin-bottom: 36px;
-  line-height: 1.7;
+  line-height: 1.75;
   font-weight: 400;
   text-align: center;
 }
@@ -305,6 +305,9 @@
   border-radius: var(--radius-lg);
   padding: 32px;
   box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .gapCardHeader {
@@ -331,7 +334,9 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
+  flex: 1;
+  gap: 20px;
 }
 
 .gapList li {
@@ -388,6 +393,11 @@
   font-weight: 600;
   color: var(--color-dark-blue);
   box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.quoteBtnWrapper {
+  margin-top: 24px;
 }
 
 /* ---- SECTION 2: INTRODUCING SECURETRACK ---- */
@@ -395,6 +405,63 @@
   padding: 100px 0;
   background: linear-gradient(180deg, var(--color-dark-blue) 0%, var(--color-dark-blue-light) 100%);
   color: var(--color-white);
+}
+
+.secureTrackGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+@media (min-width: 992px) {
+  .secureTrackGrid {
+    grid-template-columns: 5fr 7fr;
+  }
+}
+
+.pillarList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pillarCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(254, 207, 49, 0.25);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.pillarCard:hover {
+  transform: translateX(6px);
+  border-color: var(--color-gold);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pillarHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-gold);
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.pillarIcon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.pillarDesc {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0;
 }
 
 /* ---- SECTION 3: HOW SECURE GUARD HELPS ---- */
@@ -535,6 +602,25 @@
   background: var(--color-bg-section);
 }
 
+.transparencyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .transparencyGrid {
+    grid-template-columns: 5fr 7fr;
+  }
+}
+
+.transparencyColLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .sectionTitleLeft {
   font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 900;
@@ -550,19 +636,22 @@
 }
 
 .questionBox {
-  background: var(--color-dark-blue);
-  color: var(--color-white);
+  background: #ffffff;
+  border-left: 4px solid var(--color-dark-blue);
   padding: 20px 24px;
-  border-radius: var(--radius-md);
-  border-left: 4px solid var(--color-gold);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
   box-shadow: var(--shadow-md);
+  border-top: 1px solid rgba(29, 44, 72, 0.08);
+  border-right: 1px solid rgba(29, 44, 72, 0.08);
+  border-bottom: 1px solid rgba(29, 44, 72, 0.08);
 }
 
 .questionText {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--color-gold);
-  line-height: 1.4;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color-dark-blue);
+  line-height: 1.5;
   margin: 0;
 }
 

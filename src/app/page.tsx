@@ -45,8 +45,8 @@ export default function HomePage() {
       <section className={styles.hero} id="hero">
         <div className={styles.heroBg}>
           <Image
-            src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1600&auto=format&fit=crop"
-            alt="Secure Guard Security Services Hero"
+            src="/shopping_center_hero.png"
+            alt="The Secure Guard Advantage"
             fill
             className={styles.heroBgImg}
             priority
@@ -136,7 +136,7 @@ export default function HomePage() {
                 <div className={styles.quoteBox}>
                   "We move security from 'trust-based' to 'evidence-based' with real-time digital verification."
                 </div>
-                <div className="mt-6 text-center sm:text-left">
+                <div className={`${styles.quoteBtnWrapper} text-center sm:text-left`}>
                   <button
                     onClick={() => handleOpenConsultation("Schedule Your Free Security Consultation")}
                     className={styles.btnPrimarySm}
@@ -163,41 +163,41 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
-            <div className="lg:col-span-5 space-y-6 text-[#ffffff]/90 text-sm leading-relaxed">
-              <div className="p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm space-y-3">
-                <div className="flex items-center gap-3 text-[#fecf31] font-bold text-base">
-                  <Eye size={20} />
+          <div className={styles.secureTrackGrid}>
+            <div className={styles.pillarList}>
+              <div className={styles.pillarCard}>
+                <div className={styles.pillarHeader}>
+                  <Eye size={20} className={styles.pillarIcon} />
                   <span>Organized Field Operations</span>
                 </div>
-                <p>
+                <p className={styles.pillarDesc}>
                   SecureTrack provides a more organized approach by capturing security activity, patrol information, incident reports, photos, and relevant site updates in one system.
                 </p>
               </div>
 
-              <div className="p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm space-y-3">
-                <div className="flex items-center gap-3 text-[#fecf31] font-bold text-base">
-                  <ShieldCheck size={20} />
+              <div className={styles.pillarCard}>
+                <div className={styles.pillarHeader}>
+                  <ShieldCheck size={20} className={styles.pillarIcon} />
                   <span>Actionable Clarity, Not Noise</span>
                 </div>
-                <p>
+                <p className={styles.pillarDesc}>
                   The goal is not to overwhelm you with reports. It is to give you the information needed to understand how your property was protected.
                 </p>
               </div>
 
-              <div className="p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm space-y-3">
-                <div className="flex items-center gap-3 text-[#fecf31] font-bold text-base">
-                  <FileCheck size={20} />
+              <div className={styles.pillarCard}>
+                <div className={styles.pillarHeader}>
+                  <FileCheck size={20} className={styles.pillarIcon} />
                   <span>Comprehensive Platform</span>
                 </div>
-                <p>
+                <p className={styles.pillarDesc}>
                   SecureTrack serves as SGSS’s platform for field logs, compliance oversight, GPS-supported guard activity, reporting, and client transparency.
                 </p>
               </div>
             </div>
 
             {/* Interactive Widget Column */}
-            <div className="lg:col-span-7">
+            <div>
               <SecureTrackDemoWidget />
             </div>
           </div>
@@ -327,8 +327,8 @@ export default function HomePage() {
       {/* ===== SECTION 5: BETTER SECURITY THROUGH TRANSPARENCY & FORM ===== */}
       <section className={styles.transparencySection} id="lead-form">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5 space-y-6">
+          <div className={styles.transparencyGrid}>
+            <div className={styles.transparencyColLeft}>
               <span className={styles.sectionTag}>Maximum Oversight</span>
               <h2 className={styles.sectionTitleLeft}>
                 Better Security Through Transparency
@@ -336,11 +336,11 @@ export default function HomePage() {
               <p className={styles.bodyTextLeft}>
                 You are running a business, not a security agency. SecureTrack gives you the oversight you need to hold your security team accountable, optimize patrol routes, and document site activity without the headache of manual paperwork.
               </p>
-              <div className={styles.questionBox}>
-                <h3 className={styles.questionText}>
-                  Are you ready to see exactly what happens during every shift?
-                </h3>
-              </div>
+              <blockquote className={styles.questionBox}>
+                <p className={styles.questionText}>
+                  "Are you ready to see exactly what happens during every shift?"
+                </p>
+              </blockquote>
               <div>
                 <button
                   onClick={() => handleOpenConsultation("Schedule a Demo of SecureTrack")}
@@ -352,7 +352,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="lg:col-span-7">
+            <div>
               <LeadGenForm
                 title="Schedule Your SecureTrack Review"
                 subtitle="Fill out the property details below. An SGSS operations specialist will contact you with a customized security analysis."

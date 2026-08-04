@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import styles from "./LeadGenForm.module.css";
 import { Shield, CheckCircle, Send } from "lucide-react";
 
 interface LeadGenFormProps {
@@ -50,17 +51,17 @@ export function LeadGenForm({
 
   if (submitted) {
     return (
-      <div className={`w-full max-w-xl mx-auto bg-white p-8 rounded-2xl border border-gray-100 shadow-xl text-center ${className}`}>
-        <div className="w-16 h-16 bg-[#fecf31]/20 text-[#1d2c48] rounded-full flex items-center justify-center mx-auto mb-4">
-          <CheckCircle size={36} className="text-[#1d2c48]" />
+      <div className={`${styles.successCard} ${className}`}>
+        <div className={styles.successIconCircle}>
+          <CheckCircle size={36} />
         </div>
-        <h3 className="text-2xl font-black text-[#1d2c48] mb-2">Request Received!</h3>
-        <p className="text-[#2a2829] text-sm mb-6 leading-relaxed">
+        <h3 className={styles.successTitle}>Request Received!</h3>
+        <p className={styles.successDesc}>
           Thank you, <strong>{formData.name}</strong>. Our security operations team has received your information for <strong>{formData.companyName || "your property"}</strong>. We will reach out shortly to schedule your live SecureTrack consultation.
         </p>
         <button
           onClick={() => setSubmitted(false)}
-          className="bg-[#1d2c48] hover:bg-[#263659] text-white font-bold py-2.5 px-6 rounded-lg text-xs uppercase tracking-wider transition-all"
+          className={styles.resetBtn}
         >
           Submit Another Request
         </button>
@@ -69,28 +70,28 @@ export function LeadGenForm({
   }
 
   return (
-    <div className={`w-full max-w-2xl mx-auto bg-white p-6 sm:p-8 rounded-2xl border border-gray-200/80 shadow-2xl ${className}`}>
+    <div className={`${styles.formCard} ${className}`}>
       {!hideHeader && (
-        <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 bg-[#fecf31]/20 border border-[#fecf31]/40 text-[#1d2c48] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
-            <Shield size={14} className="text-[#1d2c48]" />
+        <div className={styles.headerArea}>
+          <div className={styles.badge}>
+            <Shield size={14} className={styles.badgeIcon} />
             Risk Assessment
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-[#1d2c48] leading-tight tracking-tight mb-2">
+          <h2 className={styles.title}>
             {title}
           </h2>
-          <div className="h-1 bg-[#fecf31] w-20 mx-auto rounded-full mb-3"></div>
-          <p className="text-sm text-[#929292] max-w-md mx-auto leading-relaxed">
+          <div className={styles.divider} />
+          <p className={styles.subtitle}>
             {subtitle}
           </p>
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className={styles.form}>
         {/* Row 1: Name & Company */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-xs font-bold text-[#1d2c48] mb-1">
+        <div className={styles.row2Col}>
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>
               Full Name *
             </label>
             <input
@@ -100,11 +101,11 @@ export function LeadGenForm({
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full bg-[#f8f9fc] border border-[#c4c4c4] rounded-lg px-4 py-3 text-sm text-[#2a2829] focus:outline-none focus:border-[#1d2c48] focus:ring-2 focus:ring-[#fecf31]/50 transition-all"
+              className={styles.input}
             />
           </div>
-          <div>
-            <label className="block text-xs font-bold text-[#1d2c48] mb-1">
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>
               Company / Property Name *
             </label>
             <input
@@ -114,15 +115,15 @@ export function LeadGenForm({
               required
               value={formData.companyName}
               onChange={handleChange}
-              className="w-full bg-[#f8f9fc] border border-[#c4c4c4] rounded-lg px-4 py-3 text-sm text-[#2a2829] focus:outline-none focus:border-[#1d2c48] focus:ring-2 focus:ring-[#fecf31]/50 transition-all"
+              className={styles.input}
             />
           </div>
         </div>
 
         {/* Row 2: Email & Phone */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-xs font-bold text-[#1d2c48] mb-1">
+        <div className={styles.row2Col}>
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>
               Business Email *
             </label>
             <input
@@ -132,11 +133,11 @@ export function LeadGenForm({
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full bg-[#f8f9fc] border border-[#c4c4c4] rounded-lg px-4 py-3 text-sm text-[#2a2829] focus:outline-none focus:border-[#1d2c48] focus:ring-2 focus:ring-[#fecf31]/50 transition-all"
+              className={styles.input}
             />
           </div>
-          <div>
-            <label className="block text-xs font-bold text-[#1d2c48] mb-1">
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>
               Phone Number *
             </label>
             <input
@@ -146,22 +147,22 @@ export function LeadGenForm({
               required
               value={formData.phone}
               onChange={handleChange}
-              className="w-full bg-[#f8f9fc] border border-[#c4c4c4] rounded-lg px-4 py-3 text-sm text-[#2a2829] focus:outline-none focus:border-[#1d2c48] focus:ring-2 focus:ring-[#fecf31]/50 transition-all"
+              className={styles.input}
             />
           </div>
         </div>
 
         {/* Row 3: Property Type & City */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-xs font-bold text-[#1d2c48] mb-1">
+        <div className={styles.row2Col}>
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>
               Property Type
             </label>
             <select
               name="propertyType"
               value={formData.propertyType}
               onChange={handleChange}
-              className="w-full bg-[#f8f9fc] border border-[#c4c4c4] rounded-lg px-4 py-3 text-sm text-[#2a2829] focus:outline-none focus:border-[#1d2c48] focus:ring-2 focus:ring-[#fecf31]/50 transition-all"
+              className={styles.select}
             >
               <option value="">Select Property Type...</option>
               <option value="Commercial Office / Plaza">Commercial Office / Plaza</option>
@@ -172,8 +173,8 @@ export function LeadGenForm({
               <option value="Other">Other Property</option>
             </select>
           </div>
-          <div>
-            <label className="block text-xs font-bold text-[#1d2c48] mb-1">
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>
               City / Location
             </label>
             <input
@@ -182,14 +183,14 @@ export function LeadGenForm({
               placeholder="e.g. Los Angeles, Irvine, San Diego"
               value={formData.city}
               onChange={handleChange}
-              className="w-full bg-[#f8f9fc] border border-[#c4c4c4] rounded-lg px-4 py-3 text-sm text-[#2a2829] focus:outline-none focus:border-[#1d2c48] focus:ring-2 focus:ring-[#fecf31]/50 transition-all"
+              className={styles.input}
             />
           </div>
         </div>
 
         {/* Row 4: Concern */}
-        <div>
-          <label className="block text-xs font-bold text-[#1d2c48] mb-1">
+        <div className={styles.fieldGroup}>
+          <label className={styles.label}>
             Current Security Concern or Objectives
           </label>
           <textarea
@@ -198,12 +199,12 @@ export function LeadGenForm({
             rows={3}
             value={formData.concern}
             onChange={handleChange}
-            className="w-full bg-[#f8f9fc] border border-[#c4c4c4] rounded-lg px-4 py-3 text-sm text-[#2a2829] focus:outline-none focus:border-[#1d2c48] focus:ring-2 focus:ring-[#fecf31]/50 transition-all resize-none"
+            className={styles.textarea}
           ></textarea>
         </div>
 
         {/* Row 5: Terms */}
-        <div className="flex items-start gap-3 pt-1">
+        <div className={styles.termsGroup}>
           <input
             type="checkbox"
             name="agreed"
@@ -211,17 +212,17 @@ export function LeadGenForm({
             required
             checked={formData.agreed}
             onChange={handleChange}
-            className="mt-1 w-4 h-4 text-[#1d2c48] border-[#c4c4c4] rounded focus:ring-[#fecf31] cursor-pointer"
+            className={styles.checkbox}
           />
-          <label htmlFor="agreed" className="text-[11px] text-[#929292] leading-tight cursor-pointer">
-            I agree to the <Link href="#privacy" className="text-[#1d2c48] font-bold underline">privacy terms</Link>. By submitting, I authorize SGSS to contact me regarding security services and field visibility solutions.
+          <label htmlFor="agreed" className={styles.termsText}>
+            I agree to the <Link href="#privacy" className={styles.privacyLink}>privacy terms</Link>. By submitting, I authorize SGSS to contact me regarding security services and field visibility solutions.
           </label>
         </div>
 
         {/* Row 6: Submit Button */}
         <button
           type="submit"
-          className="w-full bg-[#fecf31] hover:bg-[#e8bb1e] text-[#1d2c48] font-black py-4 rounded-xl shadow-lg hover:shadow-xl transition-all text-sm uppercase tracking-wider flex items-center justify-center gap-2 border border-[#fecf31] cursor-pointer"
+          className={styles.submitBtn}
         >
           <Send size={18} />
           {buttonText}

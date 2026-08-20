@@ -13,20 +13,7 @@ export function Footer() {
             style={{ height: '76px' }}
           />
         </div>
-        <div className={styles.footerLinks}>
-          <Link href="#trust-gap" className={styles.footerLink}>
-            The Trust Gap
-          </Link>
-          <Link href="#securetrack" className={styles.footerLink}>
-            SecureTrack Platform
-          </Link>
-          <Link href="#how-it-helps" className={styles.footerLink}>
-            Accountability Management
-          </Link>
-          <Link href="#features" className={styles.footerLink}>
-            Verified Features
-          </Link>
-        </div>
+
         <p className={styles.footerCopy}>
           © {new Date().getFullYear()} Secure Guard Security Services. All rights reserved. SecureTrack is a proprietary technology platform of SGSS.
         </p>

@@ -26,33 +26,13 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
         {/* Desktop Nav Links */}
         <ul className={styles.navLinks}>
           <li>
-            <Link href="#trust-gap" className={styles.navLink}>
-              The Trust Gap
-            </Link>
-          </li>
-          <li>
-            <Link href="#securetrack" className={styles.navLink}>
-              SecureTrack
-            </Link>
-          </li>
-          <li>
-            <Link href="#how-it-helps" className={styles.navLink}>
-              How It Helps
-            </Link>
-          </li>
-          <li>
-            <Link href="#features" className={styles.navLink}>
-              Features
-            </Link>
-          </li>
-          <li>
-            <button
-              onClick={onOpenConsultation}
+            <a
+              href="https://www.secureguardservices.com/contact"
               className={styles.navCta}
               id="nav-cta"
             >
               Schedule Free Consultation
-            </button>
+            </a>
           </li>
         </ul>
 
@@ -69,43 +49,12 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className={styles.mobileDropdown}>
-          <Link
-            href="#trust-gap"
-            className={styles.mobileNavLink}
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            The Trust Gap
-          </Link>
-          <Link
-            href="#securetrack"
-            className={styles.mobileNavLink}
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            SecureTrack
-          </Link>
-          <Link
-            href="#how-it-helps"
-            className={styles.mobileNavLink}
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            How It Helps
-          </Link>
-          <Link
-            href="#features"
-            className={styles.mobileNavLink}
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Features
-          </Link>
-          <button
-            onClick={() => {
-              setMobileMenuOpen(false);
-              if (onOpenConsultation) onOpenConsultation();
-            }}
+          <a
+            href="https://www.secureguardservices.com/contact"
             className={styles.mobileCta}
           >
             Schedule Free Consultation
-          </button>
+          </a>
         </div>
       )}
     </nav>

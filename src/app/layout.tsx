@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Stop Guessing. Start Verifying. | Secure Guard Security Services",
+  title: "Real-Time Security Reporting | Secure Guard Services",
   description:
-    "You shouldn't have to take 'trust me' as a security strategy. Experience total transparency with SecureTrack technology.",
+    "Experience total transparency with SecureTrack. Get real-time digital reporting, GPS-verified patrols, and unmatched accountability for your property.",
   keywords: [
     "SecureTrack",
     "security guard services",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     "GPS guard activity",
   ],
   openGraph: {
-    title: "Stop Guessing. Start Verifying. | SecureTrack Technology",
+    title: "Real-Time Security Reporting | Secure Guard Services",
     description:
-      "Experience total transparency with SecureTrack technology by Secure Guard Security Services.",
+      "Experience total transparency with SecureTrack. Get real-time digital reporting, GPS-verified patrols, and unmatched accountability for your property.",
     type: "website",
   },
 };

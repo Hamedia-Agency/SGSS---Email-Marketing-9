@@ -402,7 +402,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== PRE-FOOTER CTA ===== */}
-      <PreFooterCTA onOpenConsultation={() => handleOpenConsultation("Verify Your Property Security")} />
+      <PreFooterCTA />
 
       {/* ===== FOOTER ===== */}
       <Footer />

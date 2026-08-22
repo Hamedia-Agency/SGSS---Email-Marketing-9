@@ -141,7 +141,7 @@ export default function HomePage() {
             </div>
             <div className={styles.splitImageWrapper}>
               <Image 
-                src="https://cms.secureguardservices.com/wp-content/uploads/2026/08/defplan.webp" 
+                src="https://cms.secureguardservices.com/wp-content/uploads/2026/08/cliepor.png" 
                 alt="Digital Records & Patrol Logs" 
                 fill
                 className={styles.splitImage}
@@ -212,7 +212,7 @@ export default function HomePage() {
                     </p>
                   </>
                 ),
-                image: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/custompostord.webp"
+                image: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/timekeeping.webp"
               },
               {
                 title: "GPS Checkpoints / NFC Tags",
@@ -227,7 +227,7 @@ export default function HomePage() {
                     </p>
                   </>
                 ),
-                image: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/defplan.webp"
+                image: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/gps.webp"
               }
             ]} 
           />
